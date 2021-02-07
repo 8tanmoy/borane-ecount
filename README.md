@@ -53,7 +53,7 @@ as linear combination of `mt, m, t and a constant`.
 2. From the known structures, we solve the following equations and get the value
 of the parameters –  
 
-$`\sigma`$
+$\sigma$
 
 \texttt{solve} \\
 12x + 4y + 3z + w = 28 \\
