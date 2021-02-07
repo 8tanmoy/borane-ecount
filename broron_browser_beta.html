@@ -1,0 +1,850 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Boranes!</title>	
+</head>
+<body style="background-color:#004040; color:#ffffff; font-family:verdana, helvetica, serif;">
+<!--version 2.4.1_null_corrected-->
+	<script>
+console.log("Welcome to Tanmoy's console! ");
+document.write("<h2>Welcome to the world of boranes!</h2>");
+document.write(" ____________________________________________________________ <br>");
+console.log("Come on! you know the inputs.");
+document.write("INPUT: 1. type of polyhedron 2. number of polyhedron 3. type of sharing <br>");
+console.log("You'll get the formula man!");
+document.write("OUTPUT: 1. number of borons 2. number of hydrogens 3. net charge <br>");
+document.write(" ************************************************************ <br>");
+document.write("<br> <br>");
+
+alert("There are four options\nThe pop-ups ask for your preferences\n\nCase-1: Polyhedra and Condensation Invariable\nCase-2: Same Condensation with Different Polyhedra\nCase-3: Different Condensation with Same Polyhedra and\nCase-4: Different Polyhedra Different Condensation");		
+var opt0 = confirm("Do you want to proceed?\n\nUnless guided, clicking [CANCEL] button or blank input will terminate the program. Press Ctrl+R (windows) or Command+R (mac) for restarting.\n\nOpen the console for additional enjoyment.\n\nPlease note floating point inputs may not be supported.\nOptimised for Google Chrome in Windows.\n\nHave Fun!");
+/*DEFINING VARIABLEs*/
+	var s = 0;
+	var sCount = 0;
+	var m = 0;
+	var t = 0;
+	var tCount = 0;
+	var o = 0;
+	var B = 0;
+	var H = 0;
+	var charge = 0;
+if ( opt0 === true )
+{
+	var opt1 = confirm("Does your structure contain same type of condensation?\n\n[OK] gives you two options-\n\nCase-1: Polyhedra and Condensation Invariable and\nCase-2: Same Condensation with Different Polyhedra\n\nwhereas [CANCEL] leaves you with two-\n\nCase-3: Different Condensation with Same Polyhedra and\nCase-4: Different Polyhedra Different Condensation ");
+	if (opt1 === true)
+	{
+		var opt2 = confirm("Does your structure contain same type of polyhedra?\n\n[OK] takes you to-\nCase-1: Polyhedra and Condensation Invariable and\n\n[CANCEL] takes you to-\nCase-2: Same Condensation with Different Polyhedra");
+		if (opt2 === true)
+		{
+//*********************************************************************************************************************	
+//case 1: polyhedra and type of condensation both unchanged	
+//*********************************************************************************************************************
+			document.write("<strong>entering case 1: polyhedra and type of condensation both unchanged</strong>");
+			/*VARIABLE: M*/					
+			document.write("<br> enter The number of polyhedra <br>");
+			console.log("enter The number of polyhedra ");
+			var m = prompt("The number of polyhedra is: ");
+			if ( m === null || m === "" )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			var check1 = 0;
+			while (check1 === 0 )
+			{
+				if ( m < 1 )
+				{
+					console.log("You gotta be kidding me!");
+					console.log("Did you just write " + m + " ?  That makes no sense!");
+					document.write("you entered: " + m + "<br>	");
+					document.write("You gotta have at least one polyhedron!  Please enter a natural number.<br>");
+					var m = prompt("You gotta have at least one! Please enter a natural number. The number of polyhedra is: ");
+					if ( m === null || m === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					console.log("m = " + m );
+					check1 = 0;
+				}
+				else
+				{
+					console.log("check1 passed!");
+					console.log("m = " + m );
+					document.write("You entered: " + m + "<br>");
+					check1 = 1;
+					
+				}
+			}
+			
+			/*VARIABLE: S*/
+			var nidoarachno = 0;
+			document.write("<br> enter The number of vertices of each polyhedron <br>");
+			console.log("enter The number of vertices of each polyhedron");
+			var s = prompt("The number of vertices of each polyhedron is:");
+			if ( s === null || s === "" )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			var check2 = 0;
+			while (check2 === 0)
+			{
+				if ( s < 4 || s >15 )
+				{
+					console.log(" Please enter an integer between 4 and 15 ");
+					document.write("you entered: " + s + ", Please enter an integer between 4 and 15 <br>");
+					var s = prompt("Please enter an integer between 4 and 15. The number of vertices of each polyhedra is:");
+					if ( s === null || s === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					check2 = 0;
+				}
+				else
+				{
+					check2 = 1;
+					console.log("check2 passed");
+					document.write("The number of vertices of each polyhedron is: " + s + "<br>");
+				}
+			}
+			var nidoarachno = prompt("Is your structure nido (enter 1) or arachno (enter 2)?\nfor closo, click OK/Cancel ");
+			if ( nidoarachno === "1" )
+			{
+				document.write("Polyhedra type: NIDO<br>");
+			}
+			else if ( nidoarachno === "2" )
+			{
+				document.write("Polyhedra type: ARACHNO<br>")
+			}
+			else
+			{
+				document.write("Polyhedra type: CLOSO<br>");
+			}
+			console.log("s= " + s );
+
+			/*VARIABLE: T*/				
+			if ( parseInt(m) > 1 )
+			{
+				document.write("<br> enter The type of sharing e.g. (no sharing = 0, single atom sharing = 1, edge sharing = 2, triangular face sharing = 3, four atom sharing = 4) <br>");
+				console.log("enter The type of sharing");
+				var t = prompt("The type of sharing is:");
+				if ( t === null || t === "" )
+				{
+					document.write("<h1><br>aborted!<br></h1>");
+					throw '';
+				}
+				var check3 = 0;
+				while ( check3 === 0 )
+				{
+					if ( parseInt(t) > 0 )
+					{
+						if ( (m * s - 2 * m * t + 2 * t) < 1 )
+						{
+							console.log("You gotta have at least one Hydrogen! SHARE LESS!");
+							document.write("you shared: " + t + " atoms <br>" );
+							document.write("You gotta have at least one Hydrogen! SHARE LESS!<br>");
+							var t = prompt("You gotta have at least one Hydrogen! SHARE LESS! Again, The type of sharing is:");
+							if ( t === null || t === "" )
+							{
+								document.write("<h1><br>aborted!<br></h1>");
+								throw '';
+							}
+							check3 = 0;
+						}
+						else
+						{
+							check3 = 1;
+							console.log("check3 passed");
+							document.write("you shared: " + t + " atoms <br>" );
+						}
+					}
+					else
+					{
+						check3 = 0;
+						console.log("Here!")
+						document.write("You have promised that " + m + " polyhedra will be condensed. Please share at least one atom :( <br>");
+						var t = prompt("The type of sharing is:");
+						if ( t === null || t === "" )
+						{
+							document.write("<h1><br>aborted!<br></h1>");
+							throw '';
+						}
+					}
+				}
+			}	
+			
+			/*VARIABLE: O*/
+			if ( parseInt(t) === 1 )
+			{
+				o = ( parseInt(m) - 1 );
+				console.log("o = " + o );
+				document.write("<br> Number of single atom sharings: " + o + "<br>");
+			}
+			
+			/*CHECK BEFORE FINAL COUNT*/
+
+			console.log("s = " + s);
+			console.log("m = " + m);
+			console.log("t = " + t);
+			console.log("o = " + o);
+
+			/*FINAL COUNT*/					
+			var B = (  parseInt(m) * parseInt(s) - parseInt(t) * ( parseInt(m) - 1 ) );
+			var H = ( ( parseInt(s) * parseInt(m) ) - ( 2 * parseInt(t) * parseInt(m) ) + ( 2 * parseInt(t) ) );
+			var charge = ((parseInt(m) * parseInt(t)) - parseInt(t) - (2 * parseInt(m)) - (2 * parseInt(o)));
+			/*correction for nido-arachno*/
+			if ( parseInt(nidoarachno) === 1 )
+			{
+				charge = parseInt(charge) - 2 * parseInt(m);
+			}
+			else if ( parseInt(nidoarachno) === 2 )
+			{
+				charge = parseInt(charge) - 4 * parseInt(m);
+			}
+			/*result*/
+			console.log("B " + B + " H " + H + " Charge " + charge );
+			document.write("<br> B " + B + " H " + H + " Charge " + charge + "<br>");
+		}
+		else
+//*********************************************************************************************************************
+//case 2: same type of condensation but different type of polyhedra
+//*********************************************************************************************************************
+		{
+				document.write("<strong>entering case 2: same type of condensation but different type of polyhedra</strong>");
+			/*VARIABLE: M*/
+			document.write("<br> enter The number of polyhedra <br>");
+			console.log("enter The number of polyhedra ");
+			var m = prompt("The number of polyhedra is: ");
+			if ( m === null || m == "" )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			var check1 = 0;
+			while (check1 === 0 )
+			{
+				if ( m < 1 )
+				{
+					console.log("You gotta be kidding me!");
+					console.log("Did you just write " + m + " ?  That makes no sense!");
+					document.write("you entered: " + m + "<br>	");
+					document.write("You gotta have at least one polyhedron!  Please enter a natural number.<br>");
+					var m = prompt("You gotta have at least one! Please enter a natural number. The number of polyhedra is: ");
+					if ( m === null || m === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					console.log("m = " + m );
+					check1 = 0;
+				}
+				else
+				{
+					console.log("check1 passed!");
+					console.log("m = " + m );
+					document.write("You entered: " + m );
+					check1 = 1;
+					
+				}
+			}
+			document.write("<br>");
+			/*VARIABLE S*/
+			var nidoarachno = 0;
+			var nidoarachnoCount = 0;
+			var confirmVertices = confirm("Now you should enter " + m + " vertices");
+			if ( confirmVertices === false )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			document.write("<br>enter " + m + " vertices <br>");
+			var s = [];
+			var sCount = 0;
+			for ( var i = 1 ; i <= m ; i++ )
+			{
+				console.log("_____( i = " + i + " )_____");
+				s[i] = prompt("The number of vertices of polyhedron " + i + " is:");
+				if ( s[i] === null || s[i] === "" )
+				{
+					document.write("<h1><br>aborted!<br></h1>");
+					throw '';
+				}
+				var check2 = 0;
+				while (check2 === 0)
+				{
+					if ( parseInt(s[i]) < 4 || parseInt(s[i]) >15 )
+					{
+						console.log(" Please enter an integer between 4 and 15 ");
+						document.write("you entered: " + s[i] + ", Please enter an integer between 4 and 15 <br>");
+						s[i] = prompt("Please enter an integer between 4 and 15. The number of vertices of polyhedron " + i + " is:");
+						if ( s[i] === null || s[i] === "" )
+						{
+							document.write("<h1><br>aborted!<br></h1>");
+							throw '';
+						}
+						check2 = 0;
+					}
+					else
+					{
+						check2 = 1;
+						console.log("check2 passed");
+						document.write("The number of vertices of polyhedron " + i + " is: " + s[i] );
+						nidoarachno = prompt("is it nido (enter 1) or arachno (enter 2) ?\nfor closo, click OK/Cancel");
+							if ( nidoarachno === "1" )
+							{
+								document.write("<br>Polyhedron " + i + " type: NIDO");
+							}
+							else if ( nidoarachno === "2" )
+							{
+								document.write("<br>Polyhedron " + i + " type: ARACHNO")
+							}
+							else
+							{
+								document.write("<br>Polyhedron " + i + " type: CLOSO");
+							}
+					}
+				}
+				console.log("s= " + s[i] );
+				
+				if ( parseInt(nidoarachno) === 1 )
+				{
+					nidoarachnoCount = parseInt(nidoarachnoCount) + 1;
+				}
+				else if ( parseInt(nidoarachno) === 2 )
+				{
+					nidoarachnoCount = parseInt(nidoarachnoCount) + 2;
+				}
+				sCount = parseInt(sCount) + parseInt(s[i]);
+				console.log("sCount = " + sCount);
+				console.log("nidoarachnoCount = " + nidoarachnoCount);
+				document.write("<br>");
+				/*show user the chain*/
+			}
+			console.log("_____for loop ends___");
+			
+			/*VARIABLE: T*/				
+			if ( parseInt(m) > 1 )
+			{
+				document.write("<br> enter The type of sharing e.g. (no sharing = 0, single atom sharing = 1, edge sharing = 2, triangular face sharing = 3, four atom sharing = 4) <br>");
+				console.log("enter The type of sharing");
+				var t = prompt("The type of sharing is:");
+				if ( t === null || t === "" )
+				{
+					document.write("<h1><br>aborted!<br></h1>");
+					throw '';
+				}
+				var check3 = 0;
+				while ( check3 === 0 )
+				{
+					if ( parseInt(t) > 0 )
+					{
+						if ( ( parseInt(sCount) - 2 * parseInt(m) * parseInt(t) + 2 * parseInt(t) ) < 1 )
+						{
+							console.log("You gotta have at least one Hydrogen! SHARE LESS!");
+							document.write("you shared: " + t + " atoms <br>" );
+							document.write("You gotta have at least one Hydrogen! SHARE LESS!<br>");
+							var t = prompt("You gotta have at least one Hydrogen! SHARE LESS! Again, The type of sharing is:");
+							if ( t === null || t === "" )
+							{
+								document.write("<h1><br>aborted!<br></h1>");
+								throw '';
+							}
+							check3 = 0;
+						}
+						else
+						{
+							check3 = 1;
+							console.log("check3 passed");
+							document.write("you shared: " + t + " atoms <br>" );
+						}
+					}
+					else
+					{
+						check3 = 0;
+						console.log("Here!")
+						document.write("you entered: " + t + " but you have promised that " + m + " polyhedra will be condensed. Please share at least one atom :( <br>");
+						var t = prompt("The type of sharing is:");
+						if ( t === null || t === "" )
+						{
+							document.write("<h1><br>aborted!<br></h1>");
+							throw '';
+						}
+					}
+				}
+			}
+			
+			/*VARIABLE: O*/
+			if ( parseInt(t) === 1 )
+			{
+				o = ( parseInt(m) - 1 );
+				console.log("o = " + o );
+				document.write("<br> Number of single atom sharings: " + o + "<br>");
+			}
+			
+			/*CHECK BEFORE FINAL COUNT*/
+
+			console.log("sCount = " + sCount);
+			console.log("m = " + m);
+			console.log("t = " + t);
+			console.log("o = " + o);
+
+			/*FINAL COUNT*/	
+			var B = ( parseInt(sCount) - ( parseInt(t) * parseInt(m)) + (parseInt(t)));
+			var H = ( parseInt(sCount) - (2 * parseInt(t) * parseInt(m)) + (2 * parseInt(t)) );
+			var charge = ( parseInt(m) * parseInt(t) - parseInt(t) - 2 * parseInt(m) - 2 * parseInt(o) );
+			/*correction for nido-arachno*/
+			charge = parseInt(charge) - 2 * nidoarachnoCount;
+			console.log("B " + B + " H " + H + " Charge " + charge );
+			document.write("<br> B " + B + " H " + H + " Charge " + charge + "<br>");	
+		}
+	}
+	else
+	{
+		var opt2 = confirm("Does your structure contain same type of polyhedra?\n\n[OK] takes you to-\nCase-3: Different Condensation with Same Polyhedra and\n\n[CANCEL] takes you to-\nCase-4: Different Polyhedra Different Condensation");
+		if ( opt2 === true )
+		{
+//*********************************************************************************************************************
+//case 3: type of polyhedra same but different types of condensation
+//*********************************************************************************************************************
+			document.write("<strong>entering case 3: type of polyhedra same but different types of condensation</strong>");
+			/*VARIABLE: M*/
+			document.write("<br> enter The number of polyhedra <br>");
+			console.log("enter The number of polyhedra ");
+			var m = prompt("The number of polyhedra is: ");
+			if ( m === null || m === "" )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			var check1 = 0;
+			while (check1 === 0 )
+			{
+				if ( m < 1 )
+				{
+					console.log("You gotta be kidding me!");
+					console.log("Did you just write " + m + " ?  That makes no sense!");
+					document.write("you entered: " + m + ", you gotta have at least one polyhedron! <br>");
+					var m = prompt("You gotta have at least one! Please enter a natural number. The number of polyhedra is: ");
+					if ( m === null || m === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					console.log("m = " + m );
+					check1 = 0;
+				}
+				else
+				{
+					console.log("check1 passed!");
+					console.log("m = " + m );
+					document.write("You entered: " + m + "<br>");
+					check1 = 1;
+					
+				}
+			}
+			
+			/*VARIABLE: S*/
+			var nidoarachno = 0;
+			document.write("<br> enter The number of vertices of each polyhedron <br>");
+			console.log("enter The number of vertices of each polyhedron");
+			var s = prompt("The number of vertices of each polyhedron is:");
+			if ( s === null || s === "" )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			var check2 = 0;
+			while (check2 === 0)
+			{
+				if ( s < 4 || s >15 )
+				{
+					console.log(" Please enter an integer between 4 and 15 ");
+					document.write("you entered: " + s + ", Please enter an integer between 4 and 15 <br>");
+					var s = prompt("Please enter an integer between 4 and 15. The number of vertices of each polyhedra is:");
+					if ( s === null || s === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					check2 = 0;
+				}
+				else
+				{
+					check2 = 1;
+					console.log("check2 passed");
+					document.write("The number of vertices of each polyhedron is: " + s + "<br>");
+				}
+			}
+			var nidoarachno = prompt("Is your structure nido (enter 1) or arachno (enter 2) ?\nfor closo, click OK/Cancel");
+			if ( nidoarachno === "1" )
+			{
+				document.write("Polyhedra type: NIDO<br>");
+			}
+			else if ( nidoarachno === "2" )
+			{
+				document.write("Polyhedra type: ARACHNO<br>")
+			}
+			else
+			{
+				document.write("Polyhedra type: CLOSO<br>");
+			}
+			console.log("s= " + s );
+			
+			/*VARIABLE: T*/
+			if ( parseInt(m) > 1 )
+			{
+				var confirmCondensation = confirm("Now you should enter " + ( m - 1 ) + " types of condensations");
+				if ( confirmCondensation === false )
+				{
+					document.write("<h1><br>aborted!<br></h1>");
+					throw '';
+				}
+				document.write("<br> enter " + ( m - 1 ) + " types of condensations <br>");
+				document.write("( no sharing = 0, single atom sharing = 1, edge sharing = 2, triangular face sharing = 3, four atom sharing = 4 ) <br>");
+				var t = [];
+				var tCount = 0;
+				var oCount = 0;
+				for ( var k = 1 ; k < m ; k++ )
+				{
+					console.log("_____(k = " + k + " )_____");
+					var check3 = 0;
+					while ( check3 === 0)
+					{
+						
+						t[k] = prompt("The type of condensation between polyhedra " + k + " and " + ( k + 1 ) + " is");
+						if ( t[k] === null || t[k] === "" )
+						{
+							document.write("<h1><br>aborted!<br></h1>");
+							throw '';
+						}
+						tCount = parseInt(tCount) + parseInt(t[k]);
+						if ( parseInt(t[k]) >= parseInt(s) )
+						{
+							console.log("Try again!");
+							document.write("Sorry! you cannot share all that you have, Sir! <br>");
+							check3 = 0;
+							tCount = parseInt(tCount) - parseInt(t[k]);
+						}
+						else if ( ( ( parseInt(s) * parseInt(m)) - (2 * parseInt(tCount) ) ) < 1 )
+						{
+							console.log("prediction1 = " + parseInt( ( parseInt(s) * parseInt(m)) - (2 * parseInt(tCount) ) ) );
+							document.write("you shared: " + t[k] + " atoms <br>" );
+							document.write("You gotta have at least one Hydrogen! SHARE LESS!<br>");
+							check3 = 0;
+							tCount = parseInt(tCount) - parseInt(t[k]);
+						}
+						else 
+						{
+							console.log("tCount = " + tCount);
+							if ( ( ( parseInt(s) * parseInt(m) ) - ( 2 *  ( parseInt(tCount) + ( parseInt(m) - k - 1 ) * parseInt(t[k]) ) ) ) < 1 )		/*edit 10.07:9:44pm*/
+							{
+								console.log( "prediction2 = " + parseInt( ( parseInt(s) * parseInt(m) ) - ( 2 *  ( parseInt(tCount) + ( parseInt(m) - k - 1 ) * parseInt(t[k]) ) ) ));
+								document.write("you shared " + t[k] + " atoms. Next time share less. :P  This way you will be bankrupt! <br>");
+							}
+							/*show user the chain*/
+							if ( parseInt(t[k]) === 1 )
+							{
+								oCount = parseInt(oCount) + 1;
+								console.log("oCount = " + oCount );
+							}
+							check3 = 1;
+							document.write("The type of condensation between polyhedra " + k + " and " + ( k + 1 ) + " is: " + t[k] + "<br>" );
+							console.log("check3 passed");
+						}
+							
+					}
+				}
+			}
+			console.log("___for loop ends___");
+			
+			/*CHECK BEFORE FINAL COUNT*/
+
+			console.log("s = " + s);
+			console.log("m = " + m);
+			console.log("tCount = " + tCount);
+			console.log("oCount = " + oCount);
+					
+			/*FINAL COUNT*/	
+			var B = (( parseInt(s) * parseInt(m)) - parseInt(tCount) );
+			var H = (( parseInt(s) * parseInt(m)) - (2 * parseInt(tCount) ) );
+			var charge = ( parseInt(tCount) - 2 * parseInt(m) - 2 * parseInt(o) );
+			
+			/*correction for nido-arachno*/
+			if ( parseInt(nidoarachno) === 1 )
+			{
+				charge = parseInt(charge) - 2 * parseInt(m);
+			}
+			else if ( parseInt(nidoarachno) === 2 )
+			{
+				charge = parseInt(charge) - 4 * parseInt(m);
+			}
+			/*result*/		
+			console.log("B " + B + " H " + H + " Charge " + charge );
+			document.write("<br> B " + B + " H " + H + " Charge " + charge + "<br>");	
+		}
+		else
+		{
+//*********************************************************************************************************************
+// case 4: both number of vertices and type of sharing are changing
+//*********************************************************************************************************************
+			document.write("<strong>entering case 4: both number of vertices and type of sharing are changing</strong>");
+			/* VARIABLE: M */
+			document.write("<br><br>enter The number of polyhedra <br>");
+			console.log("enter The number of polyhedra ");
+			var m = prompt("The number of polyhedra is: ");
+			if ( m === null || m === "" )
+			{
+				document.write("<h1><br>aborted!<br></h1>");
+				throw '';
+			}
+			var check1 = 0;
+			while (check1 === 0 )
+			{
+				if ( m < 1 )
+				{
+					console.log("You gotta be kidding me!");
+					console.log("Did you just write " + m + " ?  That makes no sense!");
+					document.write("you entered: " + m + "<br>");
+					document.write("You gotta have at least one polyhedron! Please enter a natural number.<br>");
+					var m = prompt("You gotta have at least one! Please enter a natural number. The number of polyhedra is: ");
+					if ( m === null || m === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					console.log("m = " + m );
+					check1 = 0;
+				}
+				else
+				{
+					console.log("check1 passed!");
+					console.log("m = " + m );
+					document.write("You entered: " + m + "<br>");
+					check1 = 1;
+					
+				}
+			}
+			
+			/*VARIABLE: S and T*/
+			var s = [];
+			var t = [];
+			var check2 = 0;
+			var check3 = 0;
+			var check4 = 0;
+			var sCount = 0;
+			var tCount = 0;
+			var oCount = 0;
+			var nidoarachno = 0;
+			var nidoarachnoCount = 0;
+			t[0] = 0;
+			console.log("m = " + m );
+			
+			for ( var l = 1 ; l < m ; l++ )
+			{	
+				console.log("_____( l = " + l + " )_____");
+				check2 = 0;
+				while ( check2 === 0 )
+				{
+					document.write("<br>enter the number of vertices of polyhedron " + l + "<br>");
+					s[l] = prompt(" The number of vertices of polyhedron " + l + " is:");
+					if ( s[l] === null || s[l] === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					sCount = parseInt(sCount) + parseInt(s[l]);
+					if ( parseInt(s[l]) < 4 || parseInt(s[l]) > 15 )
+					{
+						console.log("not b/w 4 and 15")
+						document.write("Please enter an integer between 4 and 15 <br>");
+						sCount = parseInt(sCount) - parseInt(s[l]);
+						console.log("sCount1 = " + sCount );
+						check2 = 0;
+					}
+					else
+					{
+						if ( parseInt(s[l]) <= parseInt(t[l-1]) ) //[l-1] may be parseInt
+						{
+							console.log(" not greater than the previous share ");
+							document.write("Please use a bigger polyhedron.<br>");
+							sCount = parseInt(sCount) - parseInt(s[l]);
+							console.log("sCount2 = " + sCount );
+							check2 = 0;
+						}
+						else
+						{
+							console.log("s[l] = " + s[l] )
+							document.write("The number of vertices of polyhedron " + l + " is: " + s[l] + "<br>" );
+							nidoarachno = prompt("is it nido (enter 1) or arachno (enter 2) ?\nfor closo, click OK/Cancel");
+							if ( nidoarachno === "1" )
+							{
+								document.write("Polyhedron " + l + " type: NIDO<br>");
+							}
+							else if ( nidoarachno === "2" )
+							{
+								document.write("Polyhedron " + l + " type: ARACHNO<br>")
+							}
+							else
+							{
+								document.write("Polyhedron " + l + " type: CLOSO<br>");
+							}
+								if ( ( ( parseInt(sCount) + ( parseInt(m) - l ) * parseInt(s[l]) ) - 2 * ( parseInt(tCount) + ( parseInt(m) - 2 - l ) * parseInt(t[l-1]) ) ) < 0 )
+								{
+									document.write("Have a bigger polyhedron next time. This may exhaust Hydrogens! <br>");
+								}
+							check2 = 1;
+							console.log("sCount3 = " + sCount );
+							console.log("check2 passed");
+							if ( parseInt(nidoarachno) === 1 )
+							{
+								nidoarachnoCount = parseInt(nidoarachnoCount) + 1;
+							}
+							else if ( parseInt(nidoarachno) === 2 )
+							{
+								nidoarachnoCount = parseInt(nidoarachnoCount) + 2;
+							}
+							console.log("nidoarachno = " + nidoarachno);
+							console.log("nidoarachnoCount = " + nidoarachnoCount);
+						}
+					}
+				}
+				
+				nidoarachno = 0;
+				check3 = 0;
+				while ( check3 === 0 )
+				{
+					document.write("<br>enter the type of sharing between polyhedron " + l + " and " + ( l + 1 ) + "<br>(no sharing = 0, single atom sharing = 1, edge sharing = 2, triangular face sharing = 3, four atom sharing = 4)<br>" );
+					t[l] = prompt(" The type of sharing between polyhedron " + l + " and " + ( l + 1 ) + " is :" );
+					if ( t[l] === null || t[l] === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+					tCount = parseInt(tCount) + parseInt(t[l]);
+					if ( parseInt(t[l]) <= 0 )
+					{
+						console.log("less than or equal to 0");
+						document.write("You promised to condense " + m + " polyhedra. Please share more.<br>");
+						tCount = parseInt(tCount) - parseInt(t[l]);
+						check3 = 0;
+						console.log("tCount1 = " + tCount );
+					}
+					else
+					{
+						if ( parseInt(t[l]) >= parseInt(s[l]) )
+						{
+							console.log("more shared");
+							document.write("You cannot share more than you have. Please share less than " + s[l] + " atoms<br>");
+							tCount = parseInt(tCount) - parseInt(t[l]);
+							check3 = 0;
+							console.log("tCount2 = " + tCount );
+						}
+						else
+						{
+							console.log("t[l] = " + t[l] );
+							document.write("The type of sharing between polyhedron " + l + " and " + ( l + 1 ) + " is: " + t[l] + "<br>" );
+							if ( ( ( parseInt(sCount) + ( parseInt(m) - l ) * parseInt(s[l]) ) - 2 * ( parseInt(tCount) + ( parseInt(m) - 1 - l ) * parseInt(t[l]) ) ) < 0 )
+							{
+								document.write("Share less next time. This may exhaust Hydrogens! <br> ");
+							}
+							check3 = 1;
+							console.log("tCount3 = " + tCount );
+							console.log("check3 passed");
+						}
+					}
+				}
+				if ( parseInt(t[l]) === 1 )
+				{
+					oCount = parseInt(oCount) + 1;
+					console.log( "oCount = " + oCount );
+				}
+			}
+			
+			console.log("_____( for loop ends )_____");
+			console.log("last polyhedron");
+			
+			while ( check4 === 0 )
+			{
+				document.write("<br>enter the number of vertices of the last polyhedron <br>");
+				s[l+1] = prompt("The number of vertices of the last polyhedron is:");
+				if ( s[l+1] === null || s[l+1] === "" )
+					{
+						document.write("<h1><br>aborted!<br></h1>");
+						throw '';
+					}
+				console.log( "l = " + l );
+				console.log( "sCount = " + sCount );
+				sCount = parseInt(sCount) + parseInt(s[l+1]);
+				if ( parseInt(s[l+1]) < 4 || parseInt(s[l+1]) > 15 )
+				{
+					console.log("not b/w 4 and 15")
+					document.write("Please enter an integer between 4 and 15 <br>");
+					sCount = parseInt(sCount) - parseInt(s[l+1]);
+					console.log("sCount1 = " + sCount );
+					check4 = 0;
+				}
+				else
+				{
+					if ( parseInt(s[l+1]) <= parseInt(t[l]) )
+					{
+						console.log(" not greater than the previous share ");
+						document.write("Please use a bigger polyhedron.<br>");
+						sCount = parseInt(sCount) - parseInt(s[l+1]);
+						console.log("sCount2 = " + sCount );
+						check4 = 0;
+					}
+					else
+					{
+						console.log("s[l] = " + s[l+1] )
+						document.write("The number of vertices of the last polyhedron is: " + s[l+1] + "<br>" );
+						nidoarachno = prompt("is it nido (enter 1) or arachno (enter 2) ?");
+						if ( nidoarachno === "1" )
+						{
+							document.write("last polyhedron type: NIDO<br>");
+						}
+						else if ( nidoarachno === "2" )
+						{
+							document.write("last polyhedron type: ARACHNO<br>")
+						}
+						else
+						{
+							document.write("last polyhedron type: CLOSO<br>");
+						}
+						check4 = 1;
+						if ( parseInt(nidoarachno) === 1 )
+						{
+							nidoarachnoCount = parseInt(nidoarachnoCount) + 1;
+						}
+						else if ( parseInt(nidoarachno) === 2 )
+						{
+							nidoarachnoCount = parseInt(nidoarachnoCount) + 2;
+						}
+						console.log("nidoarachno = " + nidoarachno);
+						console.log("nidoarachnoCount = " + nidoarachnoCount);
+						console.log("sCount3 = " + sCount );
+						console.log("check4 passed");
+					}
+				}
+			}
+			
+			document.write("<br> Number of single atom sharings: " + oCount + "<br>");	
+			var B = ( parseInt(sCount) - parseInt(tCount) );
+			var H = ( parseInt(sCount) - 2 * parseInt(tCount) );
+			var charge = ( parseInt(tCount) - 2 * parseInt(m) - 2 * parseInt(oCount) );
+	/*correction for nido-arachno*/
+			charge = parseInt(charge) - 2 * nidoarachnoCount;		
+			console.log("B " + B + " H " + H + " Charge " + charge );
+			document.write(" <br> B " + B + " H " + H + " Charge " + charge + "<br>");	
+		}
+	}
+}
+else
+{
+	console.log("Aww! Bye!");
+	document.write("<h1><br>See'ya then!<br> :) <br></h1>");
+}
+	</script>
+</body>
+</html>
