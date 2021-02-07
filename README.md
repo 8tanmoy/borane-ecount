@@ -60,7 +60,7 @@ of the parameters –
 
 `w = 0, x = -1, y = 1, z = 12`
 
-> **solve**:
+> **solve**:  
 > 12x + 4y + 3z + w = 20  
 > 12x + 3y + 4z + w = 30  
 > 2x + y + 2z + w = 22  
@@ -69,14 +69,19 @@ of the parameters –
 `w = 0, x = -2, y = 2, z = 12`
 
 3. Therefore, the Boron Count becomes: `#B = (‐1)mt + t + 12m`  
-4. The Hydrogen Count is: `#H = (‐2)mt + 2t + 12m`  
-5. The Charge Count is: `Net charge = [ #BH + 1.5 * #excessB ] – [ m + #B + o ]`
-Thus, in this case,
-when `#B > #H (i.e. there’s no bridged hydrogens)`  
-Or, `#BH = #H`  
-`Net charge
-= 2*[ #H + 1.5 * ( #B ‐ #H ) – (m + #B + o ) ]  
-= 2*[ mt – t – 2m – 2o ]  `
+4. The Hydrogen Count is: 
+> #H = (‐2)mt + 2t + 12m
+5. The Charge Count is:  
+> Net charge = [ #BH + 1.5 * #excessB ] – [ m + #B + o ]
+Thus, in this case,  
+> when #B > #H (i.e. there’s no bridged hydrogens)  
+> Or, #BH = #H    
+
+> Net charge  
+> = 2 * \[ #H + 1.5 * ( #B ‐ #H ) – (m + #B + o ) \]  
+> = 2 * \[ mt – t – 2m – 2o \]  
+  
+
 Cases:
 For t =1, 0 = m ‐1
 Net charge = mt – t – 4m + 2
