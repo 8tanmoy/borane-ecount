@@ -52,14 +52,12 @@ as linear combination of `mt, m, t and a constant`.
 
 2. From the known structures, we solve the following equations and get the value
 of the parameters –  
+solve:  
+> 12x + 4y + 3z + w = 28   
+> 12x + 3y + 4z + w = 39 
+> 2x + y + 2z + w = 23 
+> 16x + 4y + 4z + w = 36 
 
-$\sigma$
-
-\texttt{solve} \\
-12x + 4y + 3z + w = 28 \\
-12x + 3y + 4z + w = 39 \\
-2x + y + 2z + w = 23 \\
-16x + 4y + 4z + w = 36 \\
 
 ----
 ## The program  
