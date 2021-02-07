@@ -52,11 +52,11 @@ as linear combination of `mt, m, t and a constant`.
 
 2. From the known structures, we solve the following equations and get the value
 of the parameters –  
-$$
+$
 \texttt{solve}
 
 
-$$
+$
 
 
 ----
