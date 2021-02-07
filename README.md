@@ -43,3 +43,10 @@ o = number of single atom sharing = m ‐1 when t =1
 and = 0 when t > 1  
 
 ----
+
+## Generating the Generating formula
+
+1. a) The number of boron atoms and the number of hydrogen atoms have been taken
+as linear combination of mt, m, t and a constant.
+`x*mt + y*t + z*m + w = obtained data`, where `x, y, z and w` are constants to be determined
+
