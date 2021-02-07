@@ -109,9 +109,7 @@ $$
 
 6. So, For condensation of icosahedron units. the generating formula becomes:  
 
-# $$
-B_{-t(m+1)+12m}{H_{-2t(m+2)+12m}}^{2[mt-t-2m-2o]}  
-$$
+<img src="https://render.githubusercontent.com/render/math?math=B_{-t(m+1)+12m}{H_{-2t(m+2)+12m}}^{2[mt-t-2m-2o]}">
 
 7. Which we further generalise to  
 # $$
