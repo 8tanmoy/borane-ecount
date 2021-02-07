@@ -1,6 +1,6 @@
 # Generating Formula for Condensed Polyhedral Boranes
-
-| Tanmoy Pal  ||
+| .  | .  |
+| .  | Tanmoy Pal |
 | Advisor | [Prof. E D Jemmis](http://ipc.iisc.ac.in/~edj/) |
 | Date of base code | July 2, 2014 |
 | Initial commit date | Feb 7, 2021 |
@@ -58,20 +58,20 @@ of the parameters –
 
 > $\texttt{solve}$:
 $$
-12x + 4y + 3z + w = 28   \\
-12x + 3y + 4z + w = 39  \\
-2x + y + 2z + w = 23  \\
-16x + 4y + 4z + w = 36  \\
+12x + 4y + 3z + w = 28   \\  
+12x + 3y + 4z + w = 39  \\  
+2x + y + 2z + w = 23  \\  
+16x + 4y + 4z + w = 36  \\  
 $$
 
 $w = 0, x = - 1, y = 1, z = 12$
   
 > $\texttt{solve}$:
 $$
-12x + 4y + 3z + w = 20  \\
-12x + 3y + 4z + w = 30  \\
-2x + y + 2z + w = 22  \\
-16x + 4y + 4z + w = 24  \\
+12x + 4y + 3z + w = 20  \\  
+12x + 3y + 4z + w = 30  \\  
+2x + y + 2z + w = 22  \\  
+16x + 4y + 4z + w = 24  \\  
 $$
  $w = 0, x = - 2, y = 2, z = 12$
   
@@ -87,7 +87,7 @@ $$
   
 5. The Charge Count is:  
   
-> $ \texttt{Net charge} = \left[ \texttt{#BH} + 1.5 \cdot \texttt{#excessB} \right] – \left[ m + \texttt{#B} + o \right]$
+> $ \texttt{Net charge} = [ \texttt{#BH} + 1.5 \cdot \texttt{#excessB}] - [ m + \texttt{#B} + o ]$
 >
 > Thus, when  $\texttt{#B} > \texttt{#H}$  (i.e. there’s no bridged hydrogens) or,   $\texttt{#BH} = \texttt{#H}$
 >
@@ -108,12 +108,12 @@ $$
 6. So, For condensation of icosahedron units. the generating formula becomes:  
 
 # $$
-B_{-t(m+1)+12m}{H_{-2t(m+2)+12m}}^{2[mt-t-2m-2o]}
+B_{-t(m+1)+12m}{H_{-2t(m+2)+12m}}^{2[mt-t-2m-2o]}  
 $$
 
-7. Which we further generalise to 
+7. Which we further generalise to  
 # $$
-B_{-t(m+1)+sm}{H_{-2t(m+2)+sm}}^{2[mt-t-2m-2o]}
+B_{-t(m+1)+sm}{H_{-2t(m+2)+sm}}^{2[mt-t-2m-2o]}  
 $$
 Where s is the number of vertices of polyhedra condensing.  
 
