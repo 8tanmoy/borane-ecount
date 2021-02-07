@@ -112,9 +112,8 @@ $$
 <img src="https://render.githubusercontent.com/render/math?math=\Huge B_{-t(m %2B 1) %2B 12m}{H_{-2t(m %2B 2) %2B 12m}}^{2[mt-t-2m-2o]}">
 
 7. Which we further generalise to  
-# $$
-B_{-t(m+1)+sm}{H_{-2t(m+2)+sm}}^{2[mt-t-2m-2o]}  
-$$
+<img src="https://render.githubusercontent.com/render/math?math=\Huge B_{ -t(m %2B 1) %2B sm }{H_{-2t(m %2B 2) %2B sm}}^{2[mt-t-2m-2o]}">  
+
 Where s is the number of vertices of polyhedra condensing.  
 
 ----
