@@ -75,11 +75,14 @@ of the parameters –
   
 5. The Charge Count is:  
 > `Net charge = [ #BH + 1.5 * #excessB ] – [ m + #B + o ]`  
+
 Thus, in this case,  
-> when `#B > #H` (i.e. there’s no bridged hydrogens)  
-> Or, `#BH = #H`    
-> `Net charge = 2 * \[ #H + 1.5 * ( #B ‐ #H ) – (m + #B + o ) \]`  
-> `= 2 * \[ mt – t – 2m – 2o \]`  
+
+> when `#B > #H` (i.e. there’s no bridged hydrogens)  Or, `#BH = #H`    
+> `Net charge = 2 * [ #H + 1.5 * ( #B ‐ #H ) – (m + #B + o ) ]`  
+> `= 2 * [ mt – t – 2m – 2o ]`  
+
+
   
   
   
