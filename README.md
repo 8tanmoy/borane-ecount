@@ -46,7 +46,23 @@ and = 0 when t > 1
 
 ## Generating the Generating formula
 
-1. a) The number of boron atoms and the number of hydrogen atoms have been taken
-as linear combination of mt, m, t and a constant.
+1. The number of boron atoms and the number of hydrogen atoms have been taken
+as linear combination of `mt, m, t and a constant`.
 `x*mt + y*t + z*m + w = obtained data`, where `x, y, z and w` are constants to be determined
 
+2. b) From the known structures, we solve the following equations and get the value
+of the parameters –  
+
+
+
+----
+## The program  
+
+The program is written in HTML and Javascript to make it executable in any browser.
+The user is guided with pop‐up boxes as well as an HTML page which is written at the
+background. The steps can be tracked from the console window. The cancel button in
+the pop‐up window will terminate the program unless guided. It can be restarted by
+reloading the browser tab.
+
+----
+## Recent Updates \[2021\]
