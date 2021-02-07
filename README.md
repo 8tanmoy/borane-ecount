@@ -1,6 +1,8 @@
 # Generating Formula for Condensed Polyhedral Boranes
-| .  | .  |
-| .  | Tanmoy Pal |
+
+| ||
+|---|---|
+| Name | Tanmoy Pal |
 | Advisor | [Prof. E D Jemmis](http://ipc.iisc.ac.in/~edj/) |
 | Date of base code | July 2, 2014 |
 | Initial commit date | Feb 7, 2021 |
