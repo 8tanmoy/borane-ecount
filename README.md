@@ -50,9 +50,13 @@ and = 0 when t > 1
 as linear combination of `mt, m, t and a constant`.
 `x*mt + y*t + z*m + w = obtained data`, where `x, y, z and w` are constants to be determined
 
-2. b) From the known structures, we solve the following equations and get the value
+2. From the known structures, we solve the following equations and get the value
 of the parameters –  
+$$
+\texttt{solve}
 
+
+$$
 
 
 ----
