@@ -83,18 +83,18 @@ Thus, in this case,
 > `= 2 * [ mt – t – 2m – 2o ]`  
 
 
-  
-  
-  
+Special Cases:  
 
-Cases:
-For t =1, 0 = m ‐1
-Net charge = mt – t – 4m + 2
-Putting t =1,
-Net charge (t=1, m) = ‐3m +1
-Net charge (t=2, m) = ‐2
-Net charge (t=3, m) = m ‐3
-Net charge (t=4, m) = 2m ‐4
+For `t = 1, o = m ‐ 1`  
+`Net charge = mt – t – 4m + 2`  
+Putting `t =1`,  
+`Net charge (t=1, m) = ‐3m +1`  
+`Net charge (t=2, m) = ‐2`  
+`Net charge (t=3, m) = m ‐3`  
+`Net charge (t=4, m) = 2m ‐4`  
+
+This is consistant with previously proposed generating formulae.  
+
 
 ----
 ## The program  
