@@ -74,7 +74,7 @@ of the parameters –
 > `#H = (‐2)mt + 2t + 12m`
   
 5. The Charge Count is:  
-> `Net charge = [ #BH + 1.5 * #excessB ] – [ m + #B + o ]`. 
+> `Net charge = [ #BH + 1.5 * #excessB ] – [ m + #B + o ]`  
 Thus, in this case,  
 > when `#B > #H` (i.e. there’s no bridged hydrogens)  
 > Or, `#BH = #H`    
