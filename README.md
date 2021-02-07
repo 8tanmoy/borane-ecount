@@ -98,7 +98,7 @@ This is consistant with previously proposed generating formulae.
 
 6. So, the generating formula becomes:  
 
-`$B_{-t}$`
+$B_{-t}$
 
 ----
 ## The program  
