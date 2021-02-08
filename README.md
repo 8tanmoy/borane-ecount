@@ -32,7 +32,8 @@ one and two additional pairs of electrons are required.
 ## Aim
 
 The intention of this project is to unify the previously suggested generating formulae of
-condensed macropolyhedral boranes into a single equation using the variables ‐-  
+condensed macropolyhedral boranes into a single equation using the variables -  
+  
 `m = number of polyhedra condensed`  
 `s = number of vertices in a polyhedron`  
 `t = type of condensation: number of points shared, such as:`  
