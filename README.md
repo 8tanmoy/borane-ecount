@@ -58,8 +58,8 @@ as linear combination of $mt, m, t$ and $a\:constant$.
 
 2. From the known structures, we solve the following equations and get the value
 of the parameters –  
-
-> `solve:`
+  
+solve:
 ```
 12x + 4y + 3z + w = 28   
 12x + 3y + 4z + w = 39  
@@ -69,7 +69,7 @@ of the parameters –
   
 `w = 0, x = - 1, y = 1, z = 12`
   
-> `solve:`
+solve:
 ```
 12x + 4y + 3z + w = 20  
 12x + 3y + 4z + w = 30  
@@ -82,30 +82,30 @@ of the parameters –
   
 3. Therefore, the Boron Count becomes:  
   
-> $\texttt{#B} = - 1 \cdot mt + t + 12m $
+> `#B = - mt + t + 12m`
   
 4. The Hydrogen Count is: 
   
-> $\texttt{#H} = - 2 \cdot mt + 2t + 12m$
+> `#H = - 2mt + 2t + 12m`
   
   
 5. The Charge Count is:  
   
-> $ \texttt{Net charge} = [ \texttt{#BH} + 1.5 \cdot \texttt{#excessB}] - [ m + \texttt{#B} + o ]$
+> `Net charge = [ #BH + 1.5 #excessB ] - [ m + #B + o ]`
 >
-> Thus, when  $\texttt{#B} > \texttt{#H}$  (i.e. there’s no bridged hydrogens) or,   $\texttt{#BH} = \texttt{#H}$
+> Thus, when `#B} > #H` (i.e. there’s no bridged hydrogens) or, `#BH = #H`
 >
->> $\texttt{Net charge} = 2 \cdot [ \texttt{#H} + 1.5 \cdot [ \texttt{#B} - \texttt{#H} ] - [ m + \texttt{#B} + o ] ]
-= 2 \cdot [ mt - t - 2m - 2o ] $
+>> `Net charge = 2 [ #H + 1.5 [ #B - #H ] - [ m + #B + o ] ]
+= 2 [ mt - t - 2m - 2o ]`
 >
 > Special Cases:  
 >> For `t = 1, o = m - 1`
->> $\texttt{Net charge}$ = `mt – t – 4m + 2`  
+>> `Net charge = mt – t – 4m + 2`  
 >> Putting `t =1`,   
->> $\texttt{Net charge}$ `(t=1, m) = -3m +1`  
->> $\texttt{Net charge}$ `(t=2, m) = -2`  
->> $\texttt{Net charge}$ `(t=3, m) = m - 3`  
->> $\texttt{Net charge}$ `(t=4, m) = 2m - 4`
+>> `Net charge(t=1, m) = -3m +1`  
+>> `Net charge(t=2, m) = -2`  
+>> `Net charge(t=3, m) = m - 3`  
+>> `Net charge(t=4, m) = 2m - 4`
 >
 > This is consistant with previously proposed generating formulae.  
 
