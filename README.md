@@ -53,30 +53,31 @@ condensed macropolyhedral boranes into a single equation using the variables -
 
 1. The number of boron atoms and the number of hydrogen atoms have been taken
 as linear combination of $mt, m, t$ and $a\:constant$.
-$x \cdot mt + y \cdot t + z \cdot m + w = obtained \: data$, where $x, y, z$ and $w$ are constants to be determined
+`x.mt + y.t + z.m + w = obtained data`, where `x, y, z` and `w` are constants to be determined
 
 
 2. From the known structures, we solve the following equations and get the value
 of the parameters –  
 
-> $\texttt{solve}$:
-$$
-12x + 4y + 3z + w = 28   \\  
-12x + 3y + 4z + w = 39  \\  
-2x + y + 2z + w = 23  \\  
-16x + 4y + 4z + w = 36  \\  
-$$
-
-$w = 0, x = - 1, y = 1, z = 12$
+> `solve:`
+```
+12x + 4y + 3z + w = 28   
+12x + 3y + 4z + w = 39  
+2x + y + 2z + w = 23  
+16x + 4y + 4z + w = 36  
+```
   
-> $\texttt{solve}$:
-$$
-12x + 4y + 3z + w = 20  \\  
-12x + 3y + 4z + w = 30  \\  
-2x + y + 2z + w = 22  \\  
-16x + 4y + 4z + w = 24  \\  
-$$
- $w = 0, x = - 2, y = 2, z = 12$
+`w = 0, x = - 1, y = 1, z = 12`
+  
+> `solve:`
+```
+12x + 4y + 3z + w = 20  
+12x + 3y + 4z + w = 30  
+2x + y + 2z + w = 22  
+16x + 4y + 4z + w = 24  
+```
+  
+`w = 0, x = - 2, y = 2, z = 12`
   
   
 3. Therefore, the Boron Count becomes:  
