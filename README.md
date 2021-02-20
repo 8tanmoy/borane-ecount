@@ -140,7 +140,7 @@ to that the user will be asked whether the polyhedra are `closo`, `nido` or `ara
 
 
 ----
-## [The Program](/src/boron_browser_beta.html)  
+## [The Program](src/broron_browser_beta.html)  
 
 The program is written in `HTML` and `JavaScript` to make it executable in any browser.
 The user is guided with pop‐up boxes as well as an HTML page which is written at the
